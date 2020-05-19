@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lindian.dao.TestDao">
+    <resultMap id="allProductionResultMap" type="com.lindian.domain.Production">
+        <result column="name" property="name"/>
+        <result column="pic" property="pic"/>
+        <result column="product_sn" property="productSn"/>
+        <result column="original_price" property="originalPrice"/>
+        <result column="stock" property="stock"/>
+        <result column="keywords" property="keywords"/>
+        <result column="detail_title" property="detailTitle"/>
+        <result column="brand_name" property="brandName"/>
+        <result column="product_category_name" property="productCategoryName"/>
+    </resultMap>
+
+    <select id="getAllProduction" resultMap="allProductionResultMap">
+     	select name,
+     		   pic,
+     		   product_sn,
+     		   original_price,
+     		   stock,
+     		   keywords,
+     		   detail_title,
+     		   brand_name,
+     		   product_category_name
+        from pms_product
+
+    </select>
+
+</mapper>
